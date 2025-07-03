@@ -7,7 +7,9 @@
 #define NAVNNUM 1
 #define SYM     2
 #define XTRA    3
-#define HW      4
+#define HWA     4
+#define HWB     5
+#define HW      6
 
 #define BACK LG(LBKT)
 #define FWD LG(RBKT)
@@ -31,6 +33,10 @@
             if-layers = <NAVNNUM SYM>;
             then-layer = <XTRA>;
         };
+        hidden_hw_layer {
+            if-layers = <HWA HWB>;
+            then-layer = <HW>;
+        };
     };
 
     keymap {
@@ -41,7 +47,7 @@
                             &kp Q           &kp W           &kp E           &kp R           &kp T           &kp Y       &kp U           &kp I       &kp O       &kp P
                             &mt LSHFT A     &mt LCTRL S     &mt LALT D      &mt LGUI F      &kp G           &kp H       &mt RGUI J      &mt RALT K  &mt RCTRL L &mt RSHFT SEMI
                 &kp LSHFT   &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N       &kp M           &kp COMMA   &kp DOT     &kp SQT             &kp RSHFT
-                                                            &mo HW          &mo NAVNNUM     &kp SPACE       &kp RET     &mo SYM         &none
+                                                            &mo HWA         &mo NAVNNUM     &kp SPACE       &kp RET     &mo SYM         &mo HWB
             >;
         };
 
@@ -70,6 +76,26 @@
                             &kp F1          &kp F2          &kp F3          &kp F4          &kp F5          &kp F6      &kp F7          &kp F8      &kp F9          &kp F10
                             &sk LSHFT       &sk LCTRL       &sk LALT        &sk LGUI        &kp HOME        &kp PG_UP   &sk RGUI        &sk RALT    &sk RCTRL       &sk RSHFT
                 &trans      &kp C_BRI_DN    &kp C_PREV      &kp C_PP        &kp C_NEXT      &kp END         &kp PG_DN   &kp C_VOL_DN    &kp C_MUTE  &kp C_VOL_UP    &kp C_BRI_UP    &trans
+                                                            &trans          &trans          &trans          &trans      &trans          &trans
+            >;
+        };
+
+        hw_step_a_layer {
+            label = "HWA";
+            bindings = <
+                            &none           &none           &none           &none           &none           &none       &none           &none       &none           &none
+                            &none           &none           &none           &none           &none           &none       &none           &none       &none           &none
+                &trans      &none           &none           &none           &none           &none           &none       &none           &none       &none           &none           &trans
+                                                            &trans          &trans          &trans          &trans      &trans          &trans
+            >;
+        };
+
+        hw_step_b_layer {
+            label = "HWB";
+            bindings = <
+                            &none           &none           &none           &none           &none           &none       &none           &none       &none           &none
+                            &none           &none           &none           &none           &none           &none       &none           &none       &none           &none
+                &trans      &none           &none           &none           &none           &none           &none       &none           &none       &none           &none           &trans
                                                             &trans          &trans          &trans          &trans      &trans          &trans
             >;
         };
